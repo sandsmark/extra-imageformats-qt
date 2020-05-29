@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PGF
+Type=Service
+X-KDE-ServiceTypes=QImageIOPlugins
+X-KDE-ImageFormat=pgf
+X-KDE-MimeType=image/pgf
+X-KDE-Read=true
+X-KDE-Write=false
