@@ -2,6 +2,7 @@ TEMPLATE = lib
 CONFIG  += qt plugin
 TARGET   = fuif
 SOURCES += fuifhandler.cpp
+HEADERS += fuif-decl.h
 
 INCLUDEPATH += $$(FUIFINC_PATH)
 LIBS        += -L$$(FUIFLIB_PATH) -lfuif

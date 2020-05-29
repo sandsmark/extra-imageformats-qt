@@ -1,2 +1,10 @@
 FUIF has been deprecated, as it is subsumed in jpeg-xl.
 
+So this is just in case someone has fuif files, and is readonly.
+
+FUIF image format plugin for Qt provides read-only access to FUIF images (they can be opened via QImage class, for example)
+
+Upstream:
+https://copr.fedorainfracloud.org/coprs/vr5/
+
+License: GPLv2+

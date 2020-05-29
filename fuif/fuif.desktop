@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=FUIF
+Type=Service
+X-KDE-ServiceTypes=QImageIOPlugins
+X-KDE-ImageFormat=fuif
+X-KDE-MimeType=image/fuif
+X-KDE-Read=true
+X-KDE-Write=false

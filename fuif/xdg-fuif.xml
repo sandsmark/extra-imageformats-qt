@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="image/fuif">
+    <comment>FUIF image</comment>
+    <glob pattern="*.fuif"/>
+  </mime-type>
+</mime-info>
