@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=BPG
+Type=Service
+X-KDE-ServiceTypes=QImageIOPlugins
+X-KDE-ImageFormat=bpg
+X-KDE-MimeType=image/bpg
+X-KDE-Read=true
+X-KDE-Write=false

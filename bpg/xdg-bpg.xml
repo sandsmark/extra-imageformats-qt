@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="image/bpg">
+    <comment>BPG image</comment>
+    <glob pattern="*.bpg"/>
+  </mime-type>
+</mime-info>

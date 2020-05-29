@@ -86,6 +86,3 @@ QImageIOHandler *BpgPlugin::create( QIODevice *device, const QByteArray &format 
   handler->setFormat( format );
   return handler;
 }
-
-Q_EXPORT_STATIC_PLUGIN(BpgPlugin)
-Q_EXPORT_PLUGIN2(bpg, BpgPlugin)
