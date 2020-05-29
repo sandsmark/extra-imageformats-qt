@@ -35,6 +35,7 @@ bool PgfHandler::read( QImage *image ) {
 	pgf.Read() ;
   }
   catch (IOException&) {
+	puts("PGFHandler read error");
 	return false;
   }
   
@@ -51,6 +52,7 @@ bool PgfHandler::read( QImage *image ) {
 	delete image;
 	*image = QImage();
 
+	puts("PGFHandler decode error");
 	return false;
   }
 
@@ -66,8 +68,8 @@ public:
 };
 
 QImageIOPlugin::Capabilities PgfPlugin::capabilities( QIODevice *device, const QByteArray &format ) const {
-  if ( !format.isEmpty() && format != "pgf" ) return 0;
-  if ( !device || !device->isOpen() ) return 0;
+  if ( format == "pgf" ) return Capabilities(CanRead);
+  if ( !format.isEmpty() || !device->isOpen() ) return 0;
 
   if ( device->isReadable() && PgfHandler::canRead(device) )
   	return Capabilities(CanRead);
@@ -78,9 +80,6 @@ QImageIOPlugin::Capabilities PgfPlugin::capabilities( QIODevice *device, const Q
 QImageIOHandler *PgfPlugin::create( QIODevice *device, const QByteArray &format ) const {
   PgfHandler *handler = new PgfHandler();
   handler->setDevice( device );
-  handler->setFormat( format.isEmpty()? "pgf": format );
+  handler->setFormat( format );
   return handler;
 }
-
-Q_EXPORT_STATIC_PLUGIN(PgfPlugin)
-Q_EXPORT_PLUGIN2(pgf, PgfPlugin)
