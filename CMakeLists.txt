@@ -49,7 +49,7 @@ install(FILES
     pgf/xdg-pgf.xml
 
     DESTINATION
-    ${DATAROOTDIR}/mime/image/
+    ${DATAROOTDIR}/mime/packages/
     )
 
 # kservicetrader files
