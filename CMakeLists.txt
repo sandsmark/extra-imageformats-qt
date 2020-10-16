@@ -49,7 +49,7 @@ install(FILES
     pgf/xdg-pgf.xml
 
     DESTINATION
-    ${DATAROOTDIR}/mime/packages/
+    ${CMAKE_INSTALL_DATAROOTDIR}/mime/packages/
     )
 
 # kservicetrader files
@@ -60,5 +60,5 @@ install(FILES
 
     DESTINATION
     # Should probably not hardcode this. So sue me.
-    ${DATAROOTDIR}/kservices5/qimageioplugins/
+    ${CMAKE_INSTALL_DATAROOTDIR}/kservices5/qimageioplugins/
     )
