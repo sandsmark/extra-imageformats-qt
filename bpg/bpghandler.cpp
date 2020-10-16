@@ -7,6 +7,8 @@ extern "C" {
 #include <libbpg.h>
 }
 
+#include "bpg-decl.h"
+
 class BpgHandler: public QImageIOHandler {
 public:
   BpgHandler() {}
@@ -60,14 +62,6 @@ EXIT:
 
   return ret;
 }
-
-class BpgPlugin: public QImageIOPlugin {
-public:
-  QStringList keys() const { return QStringList() << "bpg"; }
-
-  Capabilities capabilities(QIODevice *device, const QByteArray &format) const;
-  QImageIOHandler *create(QIODevice *device, const QByteArray &format = QByteArray()) const;
-};
 
 QImageIOPlugin::Capabilities BpgPlugin::capabilities( QIODevice *device, const QByteArray &format ) const {
 

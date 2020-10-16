@@ -5,6 +5,7 @@
 
 #include <libpgf/PGFimage.h>
 
+#include "pgf-decl.h"
 
 class PgfHandler: public QImageIOHandler {
 public:
@@ -58,14 +59,6 @@ bool PgfHandler::read( QImage *image ) {
 
   return ret;
 }
-
-class PgfPlugin: public QImageIOPlugin {
-public:
-  QStringList keys() const { return QStringList() << "pgf"; }
-
-  Capabilities capabilities(QIODevice *device, const QByteArray &format) const;
-  QImageIOHandler *create(QIODevice *device, const QByteArray &format = QByteArray()) const;
-};
 
 QImageIOPlugin::Capabilities PgfPlugin::capabilities( QIODevice *device, const QByteArray &format ) const {
   if ( format == "pgf" ) return Capabilities(CanRead);

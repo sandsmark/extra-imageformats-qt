@@ -5,6 +5,7 @@
 
 #include <encoding/encoding.h>
 
+#include "fuif-decl.h"
 
 class FuifHandler: public QImageIOHandler {
 public:
@@ -51,14 +52,6 @@ bool FuifHandler::read( QImage *image ) {
 
   return true;
 }
-
-class FuifPlugin: public QImageIOPlugin {
-public:
-  QStringList keys() const { return QStringList() << "fuif"; }
-
-  Capabilities capabilities(QIODevice *device, const QByteArray &format) const;
-  QImageIOHandler *create(QIODevice *device, const QByteArray &format = QByteArray()) const;
-};
 
 QImageIOPlugin::Capabilities FuifPlugin::capabilities( QIODevice *device, const QByteArray &format ) const {
 
