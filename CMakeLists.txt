@@ -7,6 +7,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(BPG)
 
 find_package(Qt5 REQUIRED COMPONENTS Gui)
+set(CMAKE_AUTOMOC ON)
+
 
 include(QueryQmake)
 query_qmake(QT_INSTALL_PLUGINS)
@@ -16,7 +18,7 @@ pkg_search_module(libpgf REQUIRED IMPORTED_TARGET libpgf)
 
 # Add plugins
 
-add_library(bpg MODULE bpg/bpghandler.cpp)
+add_library(bpg MODULE bpg/bpghandler.cpp bpg/bpg-decl.h)
 target_include_directories(bpg PRIVATE bpg)
 target_link_libraries(bpg Qt::Gui BPG::BPG)
 
