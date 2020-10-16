@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(extra-imageformats-qt)
 
+include(GNUInstallDirs)
+
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(BPG)
 
@@ -39,3 +41,24 @@ target_include_directories(fuif PRIVATE fuif fuif/libfuif)
 target_link_libraries(fuif Qt::Gui)
 
 install(TARGETS bpg pgf fuif DESTINATION ${QT_INSTALL_PLUGINS}/imageformats/)
+
+# Mime types
+install(FILES
+    bpg/xdg-bpg.xml
+    fuif/xdg-fuif.xml
+    pgf/xdg-pgf.xml
+
+    DESTINATION
+    ${DATAROOTDIR}/mime/image/
+    )
+
+# kservicetrader files
+install(FILES
+    bpg/bpg.desktop
+    fuif/fuif.desktop
+    pgf/pgf.desktop
+
+    DESTINATION
+    # Should probably not hardcode this. So sue me.
+    ${DATAROOTDIR}/kservices5/qimageioplugins/
+    )
